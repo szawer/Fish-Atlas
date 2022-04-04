@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title th:text="${title}"></title>
+    <!--/*/<th:block th:include="fragments/general.html :: headerfiles"/> /*/-->
+</head>
+<body>
+<div class="container">
+<h3> Fish id: <span th:text="${fish.id}"></span> </h3>
+<div>
+    <p>Name:<span th:text="${fish.name}"></span> </p>
+    <p>Number:<span th:text="${fish.number}"></span> </p>
+    <p>Period:<span th:text="${fish.period}"></span> </p>
+    <p>Dimension:<span th:text="${fish.dimension}"></span> </p>
+</div>
+    <div th:replace="fragments/language.html :: language"/>
+    <footer th:replace="fragments/general.html :: footer(company='lukasz.szawronski@gmail.com', year='2022')"></footer>
+</div>
+</body>
+</html>

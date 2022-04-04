@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title th:text="${title}"></title>
+    <!--/*/<th:block th:include="fragments/general.html :: headerfiles"/> /*/-->
+</head>
+<body>
+    <div class="container">
+    <h2> Fishes:</h2>
+    <table>
+        <thead>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Number</th>
+        <th>Period</th>
+        <th>Dimension</th>
+        <th>Info</th>
+        </thead>
+        <tbody>
+        <tr th:each="fish : ${fishes}">
+            <td th:text="${fish.id}"></td>
+            <td th:text="${fish.name}"></td>
+            <td th:text="${fish.number}"></td>
+            <td th:text="${fish.period}"></td>
+            <td th:text="${fish.dimension}"></td>
+            <td>
+                <a th:href="|/fish/view/${fish.id}|">view</a>
+            </td>
+
+        </tr>
+        </tbody>
+    </table>
+        <div th:replace="fragments/language.html :: language"/>
+        <footer th:replace="fragments/general.html :: footer(company='lukasz.szawronski@gmail.com', year='2022')"></footer>
+    </div>
+</body>
+</html>
